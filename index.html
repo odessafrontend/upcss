@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Организация CSS-кода</title>
+
+        <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+        <meta name="description" content="Организация CSS-кода">
+        <meta name="author" content="Анатолий Притульский">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/base.css">
+        <link rel="stylesheet" href="./css/sublime.css">
+        <link rel="stylesheet" href="./css/style.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="./css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <!-- ======================================================================================= -->
+                <section class="title-slide">
+                    <h2>Организация CSS-кода</h2>
+                    <p>Анатолий Притульский</p>
+                    <p>
+                        <small>
+                            <a href="http://travellizy.com">PHP Developer из Travellizy </a>
+                        </small>
+                    </p>
+                    <p>
+                        <a href="https://github.com/nepster-web/conf-info/tree/master/2018/CSS-methodology">
+                            https://github.com/nepster-web
+                        </a>
+                        <br>
+                        <img src="images/qr/url_to_conf_repository.png" alt="" />
+                    </p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>О себе</h2>
+                    <ul>
+                        <li>PHP Developer</li>
+                        <li>Стартапер</li>
+                    </ul>
+                    <div class="list">
+                        <div class="list-item">
+                            <a href="https://habrahabr.ru/users/nepster-web/" target="_blank">
+                                <img src="./images/habrahabr.png" alt="" />
+                                <span>nepster-web</span>
+                            </a>
+                        </div>
+                        <div class="list-item">
+                            <a href="https://github.com/nepster-web" target="_blank">
+                                <img src="./images/github.png" alt="" />
+                                <span>nepster-web</span>
+                            </a>
+                        </div>
+                        <div class="list-item">
+                            <a href="https://www.linkedin.com/in/nepster-web/" target="_blank">
+                                <img src="./images/linkedin.png" alt="" />
+                                <span>nepster-web</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <div>
+                        Разработчик <a href="https://benfrain.com/">Ben Frain</a> однажды заметил:
+                        <blockquote>Писать CSS-код легко.<br>Масштабировать и поддерживать его — нет.</blockquote>
+                    </div>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Поддержка CSS-кода</h2>
+                    <p>
+                        <img src="images/css-support.gif" alt="" style="width:680px">
+                    </p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Как решить проблему?</h2>
+                    <h3 class="fragment">Использовать <u>МЕТОДОЛОГИЮ</u>!</h3>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>CSS методологии:</h2>
+                    <ul>
+                        <li><a href="https://ru.bem.info/methodology">БЭМ</a></li>
+                        <li><a href="https://smacss.com">SMACSS</a></li>
+                        <li><a href="https://github.com/stubbornella/oocss/wiki">OOCSS</a></li>
+                        <li><a href="https://acss.io">Atomic CSS</a></li>
+                        <li><a href="https://operatino.github.io/MCSS/en/">MCSS</a></li>
+                        <li><a href="https://github.com/amcss">AMCSS</a></li>
+                        <li><a href="https://benfrain.com/enduring-css-writing-style-sheets-rapidly-changing-long-lived-projects/#l7">FUN</a></li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Для чего это нужно?</h2>
+                    <ul>
+                        <li class="fragment">Улучшить качество кода</li>
+                        <li class="fragment">Стандартизировать кодовую базу (способствует повышению производительности в команде)</li>
+                        <li class="fragment">Обеспечение возможности переиспользования частей кода</li>
+                        <li class="fragment">Облегчение масштабируемости и длительной поддержки</li>
+                        <li class="fragment">и так далее...</li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h3>
+                        Любая методология не является абсолютной догмой.
+                    </h3>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h3>
+                        Однако, методологии все-же нацелены на решение проблем.
+                    </h3>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2><a href="https://github.com/nepster-web/UpCss">UpCss</a></h2>
+                    <h2>Методология</h2>
+                    <img src="images/qr/url_to_UpCss.png" alt="" />
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Что такое UpCss?</h2>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h3>UpCss - решает следующие проблемы:</h3>
+                    <ul>
+                        <li class="fragment"><b>Быстрое изучение аспектов методологии</b></li>
+                        <li class="fragment">Организация стандартизации при написании CSS-кода</li>
+                        <li class="fragment">Гибкость и масштабируемость</li>
+                        <li class="fragment">Повторное переиспользование кода</li>
+                        <li class="fragment">Увеличение скорости разработки</li>
+                        <li class="fragment">Организация структуры CSS-файлов</li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h3>
+                        Если Вы заинтересованы хотя бы в одном из перечисленных пунктов,
+                        то UpCSs - для Вас.
+                    </h3>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <img src="images/UpCss-overview.jpg" alt="" />
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Структура UpCss</h2>
+                    <ul>
+                        <li><b>Base</b>: Базовые стили, конфиги, reset/normalize и др.</li>
+                        <li><b>Modules</b>: Независимые переиспользуемые модули.</li>
+                        <li><b>Application</b>: Структура текущего приложения.</li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Файловая структура UpCss</h2>
+                    <ul>
+                        <li>Base</li>
+                        <li>Modules</li>
+                        <li>Application
+                            <ul>
+                                <li>sections</li>
+                                <li>layouts</li>
+                                <li>pages</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <section>
+                        <h2>Base</h2>
+                        <p>Директория предназначена для хранения глобальных стилей, компонентов framework`а и конфигурации приложения.</p>
+                    </section>
+                    <section>
+                        <h3 style="text-align: left">Совет:</h3>
+                        <p style="text-align: left">
+                            Старайтесь правильно структурировать каталог, разместив в него действительно глобальные стили.
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Правила</h2>
+                        <ul>
+                            <li class="fragment">Использование только классов общего назначения и компонентов framework`а, например:
+                                <ul style="margin-top: 0">
+                                    <li>reset или normalize стили</li>
+                                    <li>grid</li>
+                                    <li>Стили по умолчанию для: body, a, img, b, strong, i, em и др.</li>
+                                    <li>Общие классы: .text-left, .text-right, .no-padding, .no-margin и др.</li>
+                                </ul>
+                            </li>
+                            <li class="fragment">Общие заготовки в виде миксинов и др.</li>
+                            <li class="fragment">Запрещено использование <b>!important</b>.</li>
+                        </ul>
+                    </section>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <section>
+                        <h2>Modules</h2>
+                        <p>
+                            Каталог содержит абстрактные модули, это могут быть как собственные заготовки, так и компоненты,
+                            предоставляемые сторонними разработчиками.
+                        </p>
+                    </section>
+                    <section>
+                        <h3 style="text-align: left">Совет:</h3>
+                        <p style="text-align: left">
+                            Старайтесь переиспользовать только абстрактные части проекта.
+                        </p>
+                        <br>
+                        <h4 style="text-align: left">Например:</h4>
+                        <p style="text-align: left">Кнопки, Таблицы, Формы, Пагинация, Уведомления и др.</p>
+                    </section>
+                    <section>
+                        <h3>Рекомендации для своих модулей:</h3>
+                        <ul class="list">
+                            <li class="fragment">
+                                Имя класса должно быть простым, понятным и полностью описывать модуль, например:
+                                <pre>.btn, .form, .alert, .pagination, .breadcrumbs и др.</pre>
+                            </li>
+                            <li class="fragment">
+                                Подклассы должны дублировать имя модуля, например:
+                                <pre>.btn .btn-main</pre>
+                            </li>
+                            <li class="fragment">
+                                Не рекомендуется использовать длинные имена классов и вложенность
+                                для генерации имен классов, состоящих из более двух знаков "-":
+                                <br>
+                                <pre>Удачный подход: .btn .btn-main .btn-round</pre>
+                                <pre>Избыточный подход: .btn .btn-main-round</pre>
+                            </li>
+                            <li class="fragment">
+                                Запрещено использование <b>!important</b>.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Рекомендации для сторонних модулей:</h3>
+                        <p>Так как, сторонние модули разрабатываются без Вашего участия,
+                            основной рекомендацией будет, внимательно подходить к выбору
+                            компонентов для повсеместного использования.
+                        </p>
+                    </section>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <section>
+                        <h2>Application</h2>
+                        <p>Основной каталог приложения, стили которого уникальны в рамках текущего проекта.</p>
+                    </section>
+
+                    <section>
+                        <h2>Основная структура</h2>
+                        <ul class="list">
+                            <li class="fragment">
+                                <h3 style="display: inline">Sections</h3>
+                                <p>
+                                    Основные составляющие приложения. <br>
+                                    Например: header, footer, sidebar, navigation и другие секции.
+                                </p>
+                            </li>
+                            <li class="fragment">
+                                <h3 style="display: inline">Layouts</h3>
+                                <p>
+                                    Стили, которые необходимы для формирования общего каркаса нескольких страниц приложения.
+                                </p>
+                            </li>
+                            <li class="fragment">
+                                <h3 style="display: inline">Pages</h3>
+                                <p>Стили, непосредственно, применяемые к конкретным страницам приложения</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Правила</h2>
+                        <ul>
+                            <li>Каталог layouts и pages - необязательный.</li>
+                            <li>
+                                Каталог application может использовать любую структуру, при условии, если
+                                это не нарушает базовую.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Пример</h2>
+                        <img src="images/example_application.png" alt="" style="width: 500px" />
+                    </section>
+
+                    <section>
+                        <h2>Общие правила</h2>
+                        <p>
+                            <a href="https://github.com/nepster-web/UpCss/blob/master/doc/core/total-rules.md">
+                                https://github.com/nepster-web/UpCss/.../total-rules.md
+                            </a>
+                            <br>
+                            <img src="images/qr/url_to_UpCss_base_rules.png" alt="" />
+                        </p>
+                    </section>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Простой пример UpCss</h2>
+                    <p>
+                        <a href="https://github.com/nepster-web/UpCss/tree/master/demo/simple">
+                            https://github.com/nepster-web/UpCss/.../demo/simple
+                        </a>
+                        <br>
+                        <img src="images/qr/url_to_UpCss_simple_example.png" alt="" />
+                    </p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h3>UpCss или BEM?</h3>
+                    <ul>
+                        <li class="fragment">UpCss - немного другая ниша</li>
+                        <li class="fragment">UpCss - близок к RAD</li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h3>Когда использовать UpCss?</h3>
+                    <ul>
+                        <li class="fragment">Когда маленький или средний проект</li>
+                        <li class="fragment">Когда нужно собрать по быстрячку</li>
+                        <li class="fragment">Когда не нужно распылять стек</li>
+                        <li class="fragment">Когда нет времени на изучение</li>
+                        <li class="fragment">Когда любите семантику</li>
+                        <li class="fragment">Когда не любите BEM</li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h3>Когда НЕ использовать UpCss?</h3>
+                    <ul>
+                        <li class="fragment">Когда используются компоненты/CSS-модули</li>
+                        <li class="fragment">Когда нужно использовать что-то конкретное</li>
+                        <li class="fragment">Когда не нужно распылять стек</li>
+                        <li class="fragment">Когда - злостный бэмер</li>
+                    </ul>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <h2>Вопросы</h2>
+                    <p>
+                        <a href="https://github.com/nepster-web/conf-info/tree/master/2018/CSS-methodology">
+                            https://github.com/nepster-web/conf-info
+                        </a>
+                        <br>
+                        <img src="images/qr/url_to_conf_repository.png" alt="" />
+                    </p>
+                </section>
+                <!-- ======================================================================================= -->
+
+                <!-- ======================================================================================= -->
+                <section>
+                    <div>
+                        <img src="images/frontend_dev.png" alt="" style="max-width: 380px; vertical-align: middle" />
+                        <img src="images/reactjs_logo.png" alt="" style="max-width: 380px; vertical-align: middle" />
+                    </div>
+                    <p style="font-size: 150%; margin: 0">+38-067-443-49-49 Виктор</p>
+                    <p><img src="images/qr/villa_phone.png" alt="" /></p>
+                </section>
+                <!-- ======================================================================================= -->
+
+            </div>
+
+        </div>
+
+        <script src="./js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+            Reveal.initialize({
+                width: 1180,
+                height: 800,
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                slideNumber: true,
+                theme: Reveal.getQueryHash().theme,
+                transition: Reveal.getQueryHash().transition || 'none',
+                dependencies: [
+                    { src: './js/dependencies/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: './js/dependencies/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+
+    </body>
+</html>
+
